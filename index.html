@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Muhammad Shahzad - Data Analyst Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
         :root {
@@ -17,24 +19,23 @@
             --dark: #1e293b;
             --light: #f8fafc;
             --text: #475569;
-            --success: #10b981;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
             color: var(--text);
             background: var(--light);
         }
 
         header {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
             padding: 1rem 0;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
         }
 
         nav {
@@ -49,6 +50,7 @@
         .logo {
             font-size: 1.5rem;
             font-weight: bold;
+            cursor: pointer;
         }
 
         .nav-links {
@@ -60,18 +62,20 @@
         .nav-links a {
             color: white;
             text-decoration: none;
-            transition: opacity 0.3s;
+            transition: all 0.3s;
             font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
         }
 
         .nav-links a:hover {
-            opacity: 0.8;
+            background: rgba(255,255,255,0.2);
         }
 
         .hero {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
-            padding: 5rem 2rem;
+            padding: 6rem 2rem;
             text-align: center;
         }
 
@@ -83,19 +87,18 @@
 
         .hero .tagline {
             font-size: 1.5rem;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
             animation: fadeInUp 1s 0.2s both;
         }
 
         .hero .description {
             font-size: 1.1rem;
             margin-bottom: 2rem;
-            opacity: 0.95;
             animation: fadeInUp 1s 0.3s both;
             max-width: 900px;
             margin-left: auto;
             margin-right: auto;
-            line-height: 1.7;
+            line-height: 1.8;
         }
 
         .hero-buttons {
@@ -107,9 +110,8 @@
         }
 
         .btn {
-            display: inline-block;
             padding: 1rem 2rem;
-            border-radius: 8px;
+            border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s;
@@ -121,15 +123,14 @@
         }
 
         .btn-secondary {
-            background: rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.15);
             color: white;
             border: 2px solid white;
-            backdrop-filter: blur(10px);
         }
 
         .btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
 
         section {
@@ -155,7 +156,7 @@
             transform: translateX(-50%);
             width: 80px;
             height: 4px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             border-radius: 2px;
         }
 
@@ -163,62 +164,49 @@
             display: grid;
             grid-template-columns: 350px 1fr;
             gap: 3rem;
-            align-items: start;
         }
 
         .profile-card {
             background: white;
             padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
             text-align: center;
             position: sticky;
-            top: 100px;
+            top: 120px;
         }
 
         .profile-pic {
             width: 180px;
             height: 180px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 4rem;
             color: white;
             margin: 0 auto 1.5rem;
-            border: 5px solid var(--light);
+            font-weight: bold;
         }
 
-        .profile-info h3 {
-            font-size: 1.5rem;
-            color: var(--dark);
-            margin-bottom: 0.3rem;
-        }
-
-        .profile-info p {
-            color: var(--text);
-            margin-bottom: 1.5rem;
-            font-size: 0.95rem;
-        }
-
-        .contact-details {
-            text-align: left;
-            margin-top: 2rem;
-            padding-top: 1.5rem;
-            border-top: 2px solid var(--light);
+        .status-badge {
+            display: inline-block;
+            background: rgba(16, 185, 129, 0.1);
+            color: #10b981;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin: 1rem 0;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 0.7rem;
-            margin-bottom: 1rem;
+            gap: 0.8rem;
+            margin: 1rem 0;
             font-size: 0.9rem;
-        }
-
-        .contact-item span:first-child {
-            font-size: 1.2rem;
         }
 
         .social-links {
@@ -229,118 +217,54 @@
         }
 
         .social-btn {
-            width: 45px;
-            height: 45px;
-            border-radius: 10px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
             display: flex;
             align-items: center;
             justify-content: center;
             text-decoration: none;
-            transition: transform 0.3s;
-            font-size: 1.2rem;
+            transition: all 0.3s;
+            font-size: 1.3rem;
         }
 
         .social-btn:hover {
-            transform: translateY(-3px);
+            transform: translateY(-5px);
         }
 
         .about-details {
             background: white;
-            padding: 2.5rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
-        }
-
-        .about-details h3 {
-            color: var(--dark);
-            margin-bottom: 1.5rem;
-            font-size: 2rem;
-        }
-
-        .about-details p {
-            margin-bottom: 1.2rem;
-            line-height: 1.8;
-            color: var(--text);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
         }
 
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 1.5rem;
-            margin-top: 2rem;
+            margin-top: 2.5rem;
         }
 
         .stat-card {
-            background: var(--light);
-            padding: 1.5rem;
-            border-radius: 12px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 2rem;
+            border-radius: 15px;
             text-align: center;
+            color: white;
+            transition: transform 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
         }
 
         .stat-number {
-            font-size: 2.5rem;
+            font-size: 3rem;
             font-weight: bold;
-            color: var(--primary);
             display: block;
-        }
-
-        .stat-label {
-            color: var(--text);
-            font-size: 0.9rem;
-            margin-top: 0.5rem;
-        }
-
-        .skills-section {
-            background: white;
-            padding: 3rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 3rem;
-        }
-
-        .skill-category h3 {
-            color: var(--dark);
-            margin-bottom: 1.5rem;
-            font-size: 1.4rem;
-            display: flex;
-            align-items: center;
-            gap: 0.7rem;
-        }
-
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.7rem;
-        }
-
-        .skill-tag {
-            background: var(--light);
-            padding: 0.6rem 1.2rem;
-            border-radius: 8px;
-            font-weight: 600;
-            color: var(--dark);
-            font-size: 0.9rem;
-            transition: all 0.3s;
-            border: 2px solid transparent;
-        }
-
-        .skill-tag:hover {
-            border-color: var(--primary);
-            background: white;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .experience-timeline {
-            position: relative;
-            padding-left: 50px;
         }
 
         .experience-timeline::before {
@@ -350,15 +274,16 @@
             top: 0;
             bottom: 0;
             width: 3px;
-            background: linear-gradient(180deg, var(--primary) 0%, var(--secondary) 100%);
+            background: linear-gradient(180deg, var(--primary), var(--secondary));
         }
 
         .timeline-item {
             background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            margin-bottom: 2rem;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            padding: 2.5rem;
+            border-radius: 20px;
+            margin-bottom: 2.5rem;
+            margin-left: 50px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
             position: relative;
         }
 
@@ -366,353 +291,105 @@
             content: '';
             position: absolute;
             left: -38px;
-            top: 2rem;
-            width: 15px;
-            height: 15px;
+            top: 2.5rem;
+            width: 18px;
+            height: 18px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            border: 3px solid white;
-            box-shadow: 0 0 0 3px var(--light);
-        }
-
-        .timeline-header {
-            margin-bottom: 1rem;
-        }
-
-        .timeline-header h3 {
-            color: var(--dark);
-            font-size: 1.5rem;
-            margin-bottom: 0.3rem;
-        }
-
-        .company-info {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .company {
-            color: var(--primary);
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
-
-        .timeline-date {
-            background: var(--light);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            color: var(--text);
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-
-        .timeline-item ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .timeline-item li {
-            padding-left: 1.5rem;
-            margin-bottom: 0.7rem;
-            position: relative;
-            line-height: 1.7;
-        }
-
-        .timeline-item li::before {
-            content: '▸';
-            position: absolute;
-            left: 0;
-            color: var(--primary);
-            font-weight: bold;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border: 4px solid white;
         }
 
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
+            gap: 2.5rem;
         }
 
         .project-card {
             background: white;
-            border-radius: 15px;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
-            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: all 0.4s;
         }
 
         .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            transform: translateY(-15px);
         }
 
         .project-header {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            padding: 2rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 2.5rem;
             color: white;
         }
 
         .project-icon {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: 1rem;
-        }
-
-        .project-header h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .project-content {
-            padding: 2rem;
-        }
-
-        .project-content p {
-            margin-bottom: 1.5rem;
-            line-height: 1.7;
-        }
-
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .tag {
-            background: var(--light);
-            color: var(--primary);
-            padding: 0.4rem 0.9rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-
-        .project-links {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .project-link {
-            flex: 1;
-            padding: 0.8rem;
-            text-align: center;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-
-        .link-demo {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
-        }
-
-        .link-code {
-            background: var(--dark);
-            color: white;
-        }
-
-        .project-link:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
 
         .certifications-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
         }
 
         .cert-card {
             background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--primary);
             transition: transform 0.3s;
-            border-left: 4px solid var(--primary);
         }
 
         .cert-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
         }
 
-        .cert-header {
-            display: flex;
-            align-items: start;
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .cert-icon {
+        .scroll-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
             width: 50px;
             height: 50px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            border-radius: 10px;
-            display: flex;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 50%;
+            display: none;
             align-items: center;
             justify-content: center;
+            cursor: pointer;
             font-size: 1.5rem;
-            color: white;
-            flex-shrink: 0;
+            transition: all 0.3s;
         }
 
-        .cert-info h3 {
-            color: var(--dark);
-            font-size: 1.2rem;
-            margin-bottom: 0.3rem;
-        }
-
-        .cert-issuer {
-            color: var(--primary);
-            font-weight: 600;
-            font-size: 0.95rem;
-        }
-
-        .cert-date {
-            color: var(--text);
-            font-size: 0.85rem;
-            margin-top: 0.5rem;
-        }
-
-        .education-card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .education-card h3 {
-            color: var(--dark);
-            font-size: 1.8rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .education-card .university {
-            color: var(--primary);
-            font-weight: 600;
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .education-card .duration {
-            color: var(--text);
-            margin-bottom: 1.5rem;
-        }
-
-        .coursework {
-            background: var(--light);
-            padding: 1.5rem;
-            border-radius: 10px;
-            margin-top: 1rem;
-        }
-
-        .coursework h4 {
-            color: var(--dark);
-            margin-bottom: 1rem;
-        }
-
-        .coursework p {
-            color: var(--text);
-            line-height: 1.8;
-        }
-
-        footer {
-            background: var(--dark);
-            color: white;
-            text-align: center;
-            padding: 3rem 2rem;
-        }
-
-        .footer-content {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .footer-links {
+        .scroll-top.show {
             display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: white;
-            text-decoration: none;
-            transition: opacity 0.3s;
-        }
-
-        .footer-links a:hover {
-            opacity: 0.7;
         }
 
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         @media (max-width: 1024px) {
-            .about-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .profile-card {
-                position: static;
-            }
-
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
+            .about-grid { grid-template-columns: 1fr; }
+            .profile-card { position: static; }
+            .stats-grid { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero .tagline {
-                font-size: 1.2rem;
-            }
-
-            .nav-links {
-                gap: 1rem;
-                font-size: 0.85rem;
-            }
-
-            .projects-grid,
-            .certifications-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .company-info {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            section {
-                padding: 3rem 1.5rem;
-            }
+            .hero h1 { font-size: 2.5rem; }
+            .nav-links { display: none; }
+            section { padding: 3rem 1.5rem; }
         }
     </style>
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">📊 MS Portfolio</div>
+            <div class="logo">📊 Muhammad Shahzad</div>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
@@ -726,11 +403,11 @@
     <section class="hero">
         <h1>Muhammad Shahzad</h1>
         <p class="tagline">Data Analyst | Business Intelligence Specialist | Analytics Engineer</p>
-        <p class="description">Results-driven Data Analyst with 6+ years of experience transforming complex datasets into strategic business insights for global SaaS and technology companies. Built 20+ enterprise-grade dashboards serving 500+ customers, reducing reporting time by 40% and improving customer retention by 25%.</p>
+        <p class="description">Results-driven Data Analyst with 6+ years transforming complex datasets into strategic insights. Built 20+ dashboards serving 500+ customers, reducing reporting time by 40% and improving retention by 25%.</p>
         <div class="hero-buttons">
-            <a href="mailto:shahzadbilal418@gmail.com" class="btn btn-primary">📧 Contact Me</a>
-            <a href="https://www.linkedin.com/in/muhammad-shahzad418/" class="btn btn-secondary">💼 LinkedIn</a>
-            <a href="https://public.tableau.com/app/profile/muhammad.shahzad5124" class="btn btn-secondary">📊 Tableau Public</a>
+            <a href="mailto:shahzadbilal418@gmail.com" class="btn btn-primary">Contact Me</a>
+            <a href="https://www.linkedin.com/in/mshahzad21/" target="_blank" class="btn btn-secondary">LinkedIn</a>
+            <a href="https://public.tableau.com/app/profile/muhammad.shahzad7978/vizzes" target="_blank" class="btn btn-secondary">Tableau</a>
         </div>
     </section>
 
@@ -739,102 +416,66 @@
         <div class="about-grid">
             <div class="profile-card">
                 <div class="profile-pic">MS</div>
-                <div class="profile-info">
-                    <h3>Muhammad Shahzad</h3>
-                    <p>Data Analytics Professional</p>
-                </div>
-                <div class="contact-details">
-                    <div class="contact-item">
-                        <span>📍</span>
-                        <span>Islamabad, Pakistan</span>
-                    </div>
-                    <div class="contact-item">
-                        <span>📱</span>
-                        <span>+92 334 9317 912</span>
-                    </div>
-                    <div class="contact-item">
-                        <span>✉️</span>
-                        <span>shahzadbilal418@gmail.com</span>
-                    </div>
-                    <div class="contact-item">
-                        <span>🌍</span>
-                        <span>Open to Relocation</span>
-                    </div>
+                <h3>Muhammad Shahzad</h3>
+                <p>Data Analytics Professional</p>
+                <span class="status-badge">✓ Available for Hire</span>
+                <div style="text-align:left; margin-top:2rem; border-top:2px solid #f8fafc; padding-top:1.5rem">
+                    <div class="contact-item"><span>📍</span><span>Islamabad, Pakistan</span></div>
+                    <div class="contact-item"><span>📱</span><span>+92 334 9317 912</span></div>
+                    <div class="contact-item"><span>✉️</span><span>shahzadbilal418@gmail.com</span></div>
+                    <div class="contact-item"><span>🌍</span><span>Open to Relocation</span></div>
                 </div>
                 <div class="social-links">
-                    <a href="https://www.linkedin.com/in/muhammad-shahzad418/" class="social-btn" title="LinkedIn">💼</a>
-                    <a href="https://public.tableau.com/app/profile/muhammad.shahzad5124" class="social-btn" title="Tableau">📊</a>
-                    <a href="https://github.com/shahzadbilal418" class="social-btn" title="GitHub">💻</a>
-                    <a href="mailto:shahzadbilal418@gmail.com" class="social-btn" title="Email">✉️</a>
+                    <a href="https://www.linkedin.com/in/mshahzad21/" target="_blank" class="social-btn">💼</a>
+                    <a href="https://public.tableau.com/app/profile/muhammad.shahzad7978/vizzes" target="_blank" class="social-btn">📊</a>
+                    <a href="https://github.com/shahzadbilal418" target="_blank" class="social-btn">💻</a>
+                    <a href="mailto:shahzadbilal418@gmail.com" class="social-btn">✉️</a>
                 </div>
             </div>
             <div class="about-details">
-                <h3>Professional Summary</h3>
-                <p>I'm a results-driven Data Analyst with over 6 years of experience in transforming complex datasets into strategic business insights for global SaaS and technology companies. My expertise lies in building enterprise-grade dashboards, automating ETL pipelines, and delivering executive-level data storytelling.</p>
-                <p>At PackageX Inc., I've built 20+ dashboards serving 500+ customers, which reduced reporting time by 40% and improved customer retention by 25%. I specialize in predictive analytics, data quality engineering, and creating automated solutions that drive business decisions.</p>
-                <p>I'm proficient in Python, SQL, BigQuery, Tableau, and Power BI, with proven success in distributed teams across multiple time zones. I'm passionate about turning data into actionable insights and building solutions that make a real impact.</p>
-                
+                <h3 style="font-size:2.2rem; margin-bottom:1.5rem">Professional Summary</h3>
+                <p style="margin-bottom:1.2rem; line-height:1.9">I'm a results-driven Data Analyst with 6+ years transforming complex datasets into strategic business insights for global SaaS companies. My expertise includes building enterprise dashboards, automating ETL pipelines, and executive-level data storytelling.</p>
+                <p style="margin-bottom:1.2rem; line-height:1.9">At PackageX Inc., I built 20+ dashboards serving 500+ customers, reducing reporting time by 40% and improving retention by 25%. I specialize in predictive analytics, data quality engineering, and creating automated solutions that drive decisions.</p>
+                <p style="line-height:1.9">Proficient in Python, SQL, BigQuery, Tableau, and Power BI, with proven success across distributed teams in multiple time zones.</p>
                 <div class="stats-grid">
-                    <div class="stat-card">
-                        <span class="stat-number">6+</span>
-                        <span class="stat-label">Years Experience</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number">20+</span>
-                        <span class="stat-label">Dashboards Built</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number">500+</span>
-                        <span class="stat-label">Customers Served</span>
-                    </div>
+                    <div class="stat-card"><span class="stat-number">6+</span><span>Years Experience</span></div>
+                    <div class="stat-card"><span class="stat-number">20+</span><span>Dashboards Built</span></div>
+                    <div class="stat-card"><span class="stat-number">500+</span><span>Customers Served</span></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="experience">
+    <section id="experience" style="background:white">
         <h2 class="section-title">Professional Experience</h2>
-        <div class="experience-timeline">
+        <div style="position:relative">
             <div class="timeline-item">
-                <div class="timeline-header">
-                    <h3>Data Analyst</h3>
-                    <div class="company-info">
-                        <p class="company">PackageX, Inc. | Islamabad, Pakistan</p>
-                        <span class="timeline-date">Dec 2022 - Present</span>
-                    </div>
-                </div>
-                <p style="margin-bottom: 1rem; font-style: italic; color: var(--text);">US-based SaaS Company</p>
-                <h4 style="color: var(--dark); margin-bottom: 1rem;">Dashboards, Reporting & Insights</h4>
-                <ul>
-                    <li>Built weekly to annual usage reports by extracting data from product databases (PostgreSQL, MySQL) and HubSpot deal tables in BigQuery, providing leadership with actionable insights into customer behavior and product performance trends</li>
-                    <li>Monitored usage rate trends for high-ARR customers with Tableau dashboards, enabling Customer Success teams to proactively address churn risks and improve retention by 25%</li>
-                    <li>Built billing projection reports for Pay-As-You-Go customers using SQL and Excel, improving forecast accuracy by 30% and reducing billing discrepancies by 18%</li>
-                    <li>Designed automated renewal intelligence dashboards and SQL-driven churn predictors that analyzed contract expiry, usage declines, and behavioral signals—empowering Sales and Customer Success teams to act 45 days earlier and boost renewal rates by 15%</li>
-                    <li>Built 20+ dashboards for Product, Sales, Finance, and Executive teams using Figma for layout design and Tableau/Power BI for development, increasing stakeholder adoption by 50%</li>
+                <h3 style="font-size:1.6rem; margin-bottom:0.5rem">Data Analyst</h3>
+                <p style="color:#2563eb; font-weight:600; font-size:1.1rem">PackageX, Inc. | Islamabad</p>
+                <p style="background:#f8fafc; display:inline-block; padding:0.6rem 1.2rem; border-radius:25px; margin:1rem 0">Dec 2022 - Present</p>
+                <h4 style="margin:1.5rem 0 1rem; font-size:1.2rem">Dashboards & Insights</h4>
+                <ul style="list-style:none; padding-left:0">
+                    <li style="padding-left:1.8rem; margin-bottom:0.8rem; position:relative; line-height:1.8"><span style="position:absolute; left:0; color:#2563eb">▸</span> Built weekly to annual usage reports using PostgreSQL, MySQL, and BigQuery, providing actionable insights into customer behavior</li>
+                    <li style="padding-left:1.8rem; margin-bottom:0.8rem; position:relative; line-height:1.8"><span style="position:absolute; left:0; color:#2563eb">▸</span> Monitored high-ARR customers with Tableau dashboards, improving retention by 25%</li>
+                    <li style="padding-left:1.8rem; margin-bottom:0.8rem; position:relative; line-height:1.8"><span style="position:absolute; left:0; color:#2563eb">▸</span> Built billing projections improving forecast accuracy by 30%</li>
+                    <li style="padding-left:1.8rem; margin-bottom:0.8rem; position:relative; line-height:1.8"><span style="position:absolute; left:0; color:#2563eb">▸</span> Designed renewal intelligence dashboards boosting renewal rates by 15%</li>
+                    <li style="padding-left:1.8rem; margin-bottom:0.8rem; position:relative; line-height:1.8"><span style="position:absolute; left:0; color:#2563eb">▸</span> Created 20+ dashboards using Figma and Tableau/Power BI</li>
                 </ul>
-                <h4 style="color: var(--dark); margin: 1.5rem 0 1rem;">Data Quality & Engineering</h4>
-                <ul>
-                    <li>Conducted CRM audits to fill missing values, ensuring data accuracy and a single source of truth</li>
-                    <li>Built automated SQL/Python pipelines in BigQuery, processing 500K+ daily records with 99.9% reliability</li>
-                    <li>Migrated customer data from 50+ PostgreSQL/MySQL tables to a new product database, created pipelines for daily updates and reducing query times by 70%</li>
-                    <li>Analyzed product usage, feature adoption, and engagement trends, guiding roadmap decisions for 1,000+ customers</li>
+                <h4 style="margin:1.5rem 0 1rem; font-size:1.2rem">Data Engineering</h4>
+                <ul style="list-style:none; padding-left:0">
+                    <li style="padding-left:1.8rem; margin-bottom:0.8rem; position:relative; line-height:1.8"><span style="position:absolute; left:0; color:#2563eb">▸</span> Built automated SQL/Python pipelines processing 500K+ daily records with 99.9% reliability</li>
+                    <li style="padding-left:1.8rem; margin-bottom:0.8rem; position:relative; line-height:1.8"><span style="position:absolute; left:0; color:#2563eb">▸</span> Migrated data from 50+ tables, reducing query times by 70%</li>
                 </ul>
             </div>
-
             <div class="timeline-item">
-                <div class="timeline-header">
-                    <h3>Data Annotation Lead</h3>
-                    <div class="company-info">
-                        <p class="company">VisionX Technologies | Islamabad, Pakistan</p>
-                        <span class="timeline-date">Sep 2019 - Mar 2022</span>
-                    </div>
-                </div>
-                <ul>
-                    <li>Led cross-functional team of 10+ data annotators delivering high-precision training data for enterprise machine learning projects in logistics and retail sectors</li>
-                    <li>Supervised annotation of 500,000+ data points including courier documentation, tracking information, and shipment metadata for OCR model training supporting U.S. warehouse automation systems</li>
-                    <li>Collaborated with ML engineering team on computer vision project for McDonald's, annotating demographic and behavioral data from office camera feeds to optimize queue management systems, contributing to 15% model performance improvement</li>
-                    <li>Implemented comprehensive quality assurance protocols maintaining 95% annotation accuracy across large-scale datasets while meeting aggressive project timelines</li>
-                    <li>Designed optimized annotation workflows reducing data processing time by 20%, increasing team productivity by 25% and improving delivery consistency</li>
+                <h3 style="font-size:1.6rem; margin-bottom:0.5rem">Data Annotation Lead</h3>
+                <p style="color:#2563eb; font-weight:600; font-size:1.1rem">VisionX Technologies | Islamabad</p>
+                <p style="background:#f8fafc; display:inline-block; padding:0.6rem 1.2rem; border-radius:25px; margin:1rem 0">Sep 2019 - Mar 2022</p>
+                <ul style="list-style:none; padding-left:0; margin-top:1.5rem">
+                    <li style="padding-left:1.8rem; margin-bottom:0.8rem; position:relative; line-height:1.8"><span style="position:absolute; left:0; color:#2563eb">▸</span> Led team of 10+ annotators for ML projects in logistics and retail</li>
+                    <li style="padding-left:1.8rem; margin-bottom:0.8rem; position:relative; line-height:1.8"><span style="position:absolute; left:0; color:#2563eb">▸</span> Supervised 500K+ data points annotation for OCR models</li>
+                    <li style="padding-left:1.8rem; margin-bottom:0.8rem; position:relative; line-height:1.8"><span style="position:absolute; left:0; color:#2563eb">▸</span> Collaborated on McDonald's computer vision project, contributing to 15% improvement</li>
+                    <li style="padding-left:1.8rem; margin-bottom:0.8rem; position:relative; line-height:1.8"><span style="position:absolute; left:0; color:#2563eb">▸</span> Maintained 95% accuracy across large-scale datasets</li>
                 </ul>
             </div>
         </div>
@@ -844,44 +485,271 @@
         <h2 class="section-title">Key Projects</h2>
         <div class="projects-grid">
             <div class="project-card">
-                <div class="project-header">
-                    <div class="project-icon">⚙️</div>
-                    <h3>End-to-End ETL Pipeline for Performance Monitoring</h3>
-                </div>
-                <div class="project-content">
-                    <p>Developed an automated ETL pipeline converting nested JSON into structured tables for real-time dashboard reporting. Created key metrics and aggregated views to track package scanning accuracy and improve data availability for analytics.</p>
-                    <div class="project-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">Google BigQuery</span>
-                        <span class="tag">SQL</span>
-                        <span class="tag">JSON Processing</span>
-                        <span class="tag">Data Modeling</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link link-code">View Details</a>
+                <div class="project-header"><div class="project-icon">⚙️</div><h3>ETL Pipeline</h3></div>
+                <div style="padding:2.5rem">
+                    <p style="margin-bottom:1.5rem; line-height:1.8">Automated pipeline converting nested JSON to structured tables for real-time reporting. Tracks scanning accuracy and improves data availability.</p>
+                    <div style="display:flex; flex-wrap:wrap; gap:0.6rem; margin-bottom:1.5rem">
+                        <span style="background:rgba(37,99,235,0.1); color:#2563eb; padding:0.5rem 1rem; border-radius:20px; font-size:0.85rem; font-weight:600">Python</span>
+                        <span style="background:rgba(37,99,235,0.1); color:#2563eb; padding:0.5rem 1rem; border-radius:20px; font-size:0.85rem; font-weight:600">BigQuery</span>
+                        <span style="background:rgba(37,99,235,0.1); color:#2563eb; padding:0.5rem 1rem; border-radius:20px; font-size:0.85rem; font-weight:600">SQL</span>
                     </div>
                 </div>
             </div>
-
             <div class="project-card">
-                <div class="project-header">
-                    <div class="project-icon">🔒</div>
-                    <h3>Credit Card Fraud Detection System</h3>
-                </div>
-                <div class="project-content">
-                    <p>Implemented end-to-end fraud detection by exploring transactional data, engineering features, and building classification models. Accurately identified high-risk transactions to enhance fraud prevention.</p>
-                    <div class="project-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">Scikit-learn</span>
-                        <span class="tag">PostgreSQL</span>
-                        <span class="tag">Machine Learning</span>
+                <div class="project-header"><div class="project-icon">🔒</div><h3>Fraud Detection</h3></div>
+                <div style="padding:2.5rem">
+                    <p style="margin-bottom:1.5rem; line-height:1.8">End-to-end fraud detection with ML classification models, identifying high-risk transactions to enhance prevention.</p>
+                    <div style="display:flex; flex-wrap:wrap; gap:0.6rem; margin-bottom:1.5rem">
+                        <span style="background:rgba(37,99,235,0.1); color:#2563eb; padding:0.5rem 1rem; border-radius:20px; font-size:0.85rem; font-weight:600">Python</span>
+                        <span style="background:rgba(37,99,235,0.1); color:#2563eb; padding:0.5rem 1rem; border-radius:20px; font-size:0.85rem; font-weight:600">Scikit-learn</span>
+                        <span style="background:rgba(37,99,235,0.1); color:#2563eb; padding:0.5rem 1rem; border-radius:20px; font-size:0.85rem; font-weight:600">PostgreSQL</span>
                     </div>
-                    <div class="project-links">
-                        <a href="https://github.com/shahzadbilal418" class="project-link link-code">GitHub</a>
+                    <a href="https://github.com/mshahzad021/credit-card-fraud-detection" target="_blank" style="display:block; background:#1e293b; color:white; text-align:center; padding:0.9rem; border-radius:10px; text-decoration:none; font-weight:600">View on GitHub</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-header"><div class="project-icon">🏥</div><h3>Healthcare Analytics</h3></div>
+                <div style="padding:2.5rem">
+                    <p style="margin-bottom:1.5rem; line-height:1.8">Interactive Tableau dashboard visualizing patient demographics, visit trends, and staff performance for healthcare planning.</p>
+                    <div style="display:flex; flex-wrap:wrap; gap:0.6rem; margin-bottom:1.5rem">
+                        <span style="background:rgba(37,99,235,0.1); color:#2563eb; padding:0.5rem 1rem; border-radius:20px; font-size:0.85rem; font-weight:600">Tableau</span>
+                        <span style="background:rgba(37,99,235,0.1); color:#2563eb; padding:0.5rem 1rem; border-radius:20px; font-size:0.85rem; font-weight:600">SQL</span>
+                        <span style="background:rgba(37,99,235,0.1); color:#2563eb; padding:0.5rem 1rem; border-radius:20px; font-size:0.85rem; font-weight:600">Excel</span>
+                    </div>
+                    <a href="https://public.tableau.com/views/HealthcareAnalysisDashboard_17251104994740/Dashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" target="_blank" style="display:block; background:linear-gradient(135deg, #2563eb, #7c3aed); color:white; text-align:center; padding:0.9rem; border-radius:10px; text-decoration:none; font-weight:600">View on Tableau</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-header"><div class="project-icon">🚗</div><h3>Car Price Analysis</h3></div>
+                <div style="padding:2.5rem">
+                    <p style="margin-bottom:1.5rem; line-height:1.8">Dynamic dashboard analyzing car pricing trends by fuel type, transmission, mileage, and brand with interactive visualizations.</p>
+                    <div style="display:flex; flex-wrap:wrap; gap:0.6rem; margin-bottom:1.5rem">
+                        <span style="background:rgba(37,99,235,0.1); color:#2563eb; padding:0.5rem 1rem; border-radius:20px; font-size:0.85rem; font-weight:600">Tableau</span>
+                        <span style="background:rgba(37,99,235,0.1); color:#2563eb; padding:0.5rem 1rem; border-radius:20px; font-size:0.85rem; font-weight:600">Statistics</span>
+                    </div>
+                    <a href="https://public.tableau.com/views/CarPriceAnalysis_17390785388020/CarPriceAnaysis?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" target="_blank" style="display:block; background:linear-gradient(135deg, #2563eb, #7c3aed); color:white; text-align:center; padding:0.9rem; border-radius:10px; text-decoration:none; font-weight:600">View on Tableau</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" style="background:white">
+        <h2 class="section-title">Technical Skills</h2>
+        <div style="background:white; padding:3rem; border-radius:20px; box-shadow:0 10px 40px rgba(0,0,0,0.1)">
+            <div style="margin-bottom:3rem">
+                <h3 style="font-size:1.5rem; margin-bottom:1.5rem; display:flex; align-items:center; gap:0.7rem"><span>💻</span> Languages & Tools</h3>
+                <div style="display:flex; flex-wrap:wrap; gap:0.8rem">
+                    <span style="background:linear-gradient(135deg, rgba(37,99,235,0.1), rgba(124,58,237,0.1)); padding:0.8rem 1.3rem; border-radius:10px; font-weight:600; cursor:pointer">Looker Studio</span>
+                    <span style="background:linear-gradient(135deg, rgba(37,99,235,0.1), rgba(124,58,237,0.1)); padding:0.8rem 1.3rem; border-radius:10px; font-weight:600; cursor:pointer">Plotly Dash</span>
+                    <span style="background:linear-gradient(135deg, rgba(37,99,235,0.1), rgba(124,58,237,0.1)); padding:0.8rem 1.3rem; border-radius:10px; font-weight:600; cursor:pointer">Figma</span>
+                </div>
+            </div>
+            <div style="margin-bottom:3rem">
+                <h3 style="font-size:1.5rem; margin-bottom:1.5rem; display:flex; align-items:center; gap:0.7rem"><span>☁️</span> Cloud & Databases</h3>
+                <div style="display:flex; flex-wrap:wrap; gap:0.8rem">
+                    <span style="background:linear-gradient(135deg, rgba(37,99,235,0.1), rgba(124,58,237,0.1)); padding:0.8rem 1.3rem; border-radius:10px; font-weight:600; cursor:pointer">Google BigQuery</span>
+                    <span style="background:linear-gradient(135deg, rgba(37,99,235,0.1), rgba(124,58,237,0.1)); padding:0.8rem 1.3rem; border-radius:10px; font-weight:600; cursor:pointer">PostgreSQL</span>
+                    <span style="background:linear-gradient(135deg, rgba(37,99,235,0.1), rgba(124,58,237,0.1)); padding:0.8rem 1.3rem; border-radius:10px; font-weight:600; cursor:pointer">MySQL</span>
+                    <span style="background:linear-gradient(135deg, rgba(37,99,235,0.1), rgba(124,58,237,0.1)); padding:0.8rem 1.3rem; border-radius:10px; font-weight:600; cursor:pointer">GCP</span>
+                </div>
+            </div>
+            <div style="margin-bottom:3rem">
+                <h3 style="font-size:1.5rem; margin-bottom:1.5rem; display:flex; align-items:center; gap:0.7rem"><span>🔧</span> Libraries & Frameworks</h3>
+                <div style="display:flex; flex-wrap:wrap; gap:0.8rem">
+                    <span style="background:linear-gradient(135deg, rgba(37,99,235,0.1), rgba(124,58,237,0.1)); padding:0.8rem 1.3rem; border-radius:10px; font-weight:600; cursor:pointer">Pandas</span>
+                    <span style="background:linear-gradient(135deg, rgba(37,99,235,0.1), rgba(124,58,237,0.1)); padding:0.8rem 1.3rem; border-radius:10px; font-weight:600; cursor:pointer">Scikit-learn</span>
+                    <span style="background:linear-gradient(135deg, rgba(37,99,235,0.1), rgba(124,58,237,0.1)); padding:0.8rem 1.3rem; border-radius:10px; font-weight:600; cursor:pointer">Flask</span>
+                </div>
+            </div>
+            <div>
+                <h3 style="font-size:1.5rem; margin-bottom:1.5rem; display:flex; align-items:center; gap:0.7rem"><span>📈</span> Specializations</h3>
+                <div style="display:flex; flex-wrap:wrap; gap:0.8rem">
+                    <span style="background:linear-gradient(135deg, rgba(37,99,235,0.1), rgba(124,58,237,0.1)); padding:0.8rem 1.3rem; border-radius:10px; font-weight:600; cursor:pointer">ETL Pipelines</span>
+                    <span style="background:linear-gradient(135deg, rgba(37,99,235,0.1), rgba(124,58,237,0.1)); padding:0.8rem 1.3rem; border-radius:10px; font-weight:600; cursor:pointer">Data Warehousing</span>
+                    <span style="background:linear-gradient(135deg, rgba(37,99,235,0.1), rgba(124,58,237,0.1)); padding:0.8rem 1.3rem; border-radius:10px; font-weight:600; cursor:pointer">Machine Learning</span>
+                    <span style="background:linear-gradient(135deg, rgba(37,99,235,0.1), rgba(124,58,237,0.1)); padding:0.8rem 1.3rem; border-radius:10px; font-weight:600; cursor:pointer">Predictive Analytics</span>
+                    <span style="background:linear-gradient(135deg, rgba(37,99,235,0.1), rgba(124,58,237,0.1)); padding:0.8rem 1.3rem; border-radius:10px; font-weight:600; cursor:pointer">CRM Analytics</span>
+                    <span style="background:linear-gradient(135deg, rgba(37,99,235,0.1), rgba(124,58,237,0.1)); padding:0.8rem 1.3rem; border-radius:10px; font-weight:600; cursor:pointer">Salesforce</span>
+                    <span style="background:linear-gradient(135deg, rgba(37,99,235,0.1), rgba(124,58,237,0.1)); padding:0.8rem 1.3rem; border-radius:10px; font-weight:600; cursor:pointer">HubSpot</span>
+                    <span style="background:linear-gradient(135deg, rgba(37,99,235,0.1), rgba(124,58,237,0.1)); padding:0.8rem 1.3rem; border-radius:10px; font-weight:600; cursor:pointer">Google Analytics</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certifications">
+        <h2 class="section-title">Certifications</h2>
+        <div class="certifications-grid">
+            <div class="cert-card">
+                <div style="display:flex; gap:1.2rem; margin-bottom:1rem">
+                    <div style="width:60px; height:60px; background:linear-gradient(135deg, #2563eb, #7c3aed); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.8rem; color:white; flex-shrink:0">🐍</div>
+                    <div>
+                        <h3 style="font-size:1.3rem; margin-bottom:0.5rem">Associate Data Analyst in Python</h3>
+                        <p style="color:#2563eb; font-weight:600">DataCamp</p>
+                        <p style="color:#475569; font-size:0.9rem; margin-top:0.5rem">Mar 2025</p>
                     </div>
                 </div>
             </div>
+            <div class="cert-card">
+                <div style="display:flex; gap:1.2rem; margin-bottom:1rem">
+                    <div style="width:60px; height:60px; background:linear-gradient(135deg, #2563eb, #7c3aed); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.8rem; color:white; flex-shrink:0">🗄️</div>
+                    <div>
+                        <h3 style="font-size:1.3rem; margin-bottom:0.5rem">Associate Data Analyst in SQL</h3>
+                        <p style="color:#2563eb; font-weight:600">DataCamp</p>
+                        <p style="color:#475569; font-size:0.9rem; margin-top:0.5rem">Feb 2025</p>
+                    </div>
+                </div>
+            </div>
+            <div class="cert-card">
+                <div style="display:flex; gap:1.2rem; margin-bottom:1rem">
+                    <div style="width:60px; height:60px; background:linear-gradient(135deg, #2563eb, #7c3aed); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.8rem; color:white; flex-shrink:0">📊</div>
+                    <div>
+                        <h3 style="font-size:1.3rem; margin-bottom:0.5rem">Data Analyst in Tableau</h3>
+                        <p style="color:#2563eb; font-weight:600">DataCamp</p>
+                        <p style="color:#475569; font-size:0.9rem; margin-top:0.5rem">Jan 2025</p>
+                    </div>
+                </div>
+            </div>
+            <div class="cert-card">
+                <div style="display:flex; gap:1.2rem; margin-bottom:1rem">
+                    <div style="width:60px; height:60px; background:linear-gradient(135deg, #2563eb, #7c3aed); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.8rem; color:white; flex-shrink:0">📈</div>
+                    <div>
+                        <h3 style="font-size:1.3rem; margin-bottom:0.5rem">Introduction to Tableau</h3>
+                        <p style="color:#2563eb; font-weight:600">Coursera</p>
+                        <p style="color:#475569; font-size:0.9rem; margin-top:0.5rem">Jan 2024</p>
+                    </div>
+                </div>
+            </div>
+            <div class="cert-card">
+                <div style="display:flex; gap:1.2rem; margin-bottom:1rem">
+                    <div style="width:60px; height:60px; background:linear-gradient(135deg, #2563eb, #7c3aed); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.8rem; color:white; flex-shrink:0">⚙️</div>
+                    <div>
+                        <h3 style="font-size:1.3rem; margin-bottom:0.5rem">Introduction to Data Engineering</h3>
+                        <p style="color:#2563eb; font-weight:600">Coursera</p>
+                        <p style="color:#475569; font-size:0.9rem; margin-top:0.5rem">May 2023</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <div class="project-card">
-                <div class="project-header">
-                    <div class="project-icon">🏥</div>
+    <section id="education" style="background:white">
+        <h2 class="section-title">Education</h2>
+        <div style="background:white; padding:3rem; border-radius:20px; box-shadow:0 10px 40px rgba(0,0,0,0.1); max-width:900px; margin:0 auto">
+            <h3 style="font-size:2rem; margin-bottom:0.5rem">Bachelor of Science in Computer Science (BSCS)</h3>
+            <p style="color:#2563eb; font-weight:600; font-size:1.3rem; margin-bottom:0.5rem">Virtual University of Pakistan</p>
+            <p style="color:#475569; margin-bottom:2rem; font-size:1rem">Aug 2017 - Oct 2023</p>
+            <div style="background:linear-gradient(135deg, rgba(37,99,235,0.05), rgba(124,58,237,0.05)); padding:2rem; border-radius:15px; border-left:4px solid #2563eb">
+                <h4 style="margin-bottom:1rem; font-size:1.2rem">Key Coursework:</h4>
+                <p style="line-height:1.9; color:#475569">Database Systems, Artificial Intelligence, Machine Learning, Data Structures & Algorithms, Software Engineering, Operating Systems</p>
+            </div>
+        </div>
+    </section>
+
+    <footer style="background:linear-gradient(135deg, #1e293b, #0f172a); color:white; text-align:center; padding:3rem 2rem">
+        <div style="max-width:1400px; margin:0 auto">
+            <h3 style="font-size:1.8rem; margin-bottom:1rem">Let's Connect!</h3>
+            <p style="margin-bottom:2rem; opacity:0.9">I'm open to new opportunities and collaborations</p>
+            <div style="display:flex; justify-content:center; gap:2rem; margin:2rem 0; flex-wrap:wrap">
+                <a href="mailto:shahzadbilal418@gmail.com" style="color:white; text-decoration:none; padding:0.5rem 1rem; border-radius:8px; transition:all 0.3s">📧 Email</a>
+                <a href="https://www.linkedin.com/in/mshahzad21/" target="_blank" style="color:white; text-decoration:none; padding:0.5rem 1rem; border-radius:8px; transition:all 0.3s">💼 LinkedIn</a>
+                <a href="https://github.com/mshahzad021" target="_blank" style="color:white; text-decoration:none; padding:0.5rem 1rem; border-radius:8px; transition:all 0.3s">💻 GitHub</a>
+                <a href="https://public.tableau.com/app/profile/muhammad.shahzad7978/vizzes" target="_blank" style="color:white; text-decoration:none; padding:0.5rem 1rem; border-radius:8px; transition:all 0.3s">📊 Tableau</a>
+            </div>
+            <p style="margin-top:2rem; opacity:0.7">© 2025 Muhammad Shahzad. All rights reserved.</p>
+            <p style="margin-top:0.5rem; opacity:0.7">Built with passion for data analytics</p>
+        </div>
+    </footer>
+
+    <div class="scroll-top" id="scrollTop" onclick="scrollToTop()">↑</div>
+
+    <script>
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Scroll to top button
+        const scrollBtn = document.getElementById('scrollTop');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollBtn.classList.add('show');
+            } else {
+                scrollBtn.classList.remove('show');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+
+        // Add hover effect to skill tags
+        document.querySelectorAll('.skill-tag, [style*="cursor:pointer"]').forEach(tag => {
+            tag.addEventListener('mouseenter', function() {
+                this.style.borderColor = '#2563eb';
+                this.style.background = 'white';
+                this.style.transform = 'translateY(-3px)';
+                this.style.boxShadow = '0 8px 20px rgba(37, 99, 235, 0.2)';
+            });
+            tag.addEventListener('mouseleave', function() {
+                this.style.borderColor = 'transparent';
+                this.style.background = 'linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(124, 58, 237, 0.1))';
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+            });
+        });
+
+        // Add active state to navigation
+        window.addEventListener('scroll', () => {
+            let current = '';
+            document.querySelectorAll('section').forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.style.background = '';
+                if (link.getAttribute('href') === '#' + current) {
+                    link.style.background = 'rgba(255,255,255,0.2)';
+                }
+            });
+        });
+
+        // Console greeting
+        console.log('%c👋 Hello, Developer!', 'color: #2563eb; font-size: 20px; font-weight: bold;');
+        console.log('%cInterested in how this portfolio was built? Let\'s connect!', 'color: #7c3aed; font-size: 14px;');
+        console.log('%c📧 shahzadbilal418@gmail.com', 'color: #10b981; font-size: 12px;');
+    </script>
+</body>
