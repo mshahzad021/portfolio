@@ -1,7 +1,7 @@
 /* ============================================================
    EDIT ONLY THIS FILE to change your website content.
    Add a project: copy one { ... } block in "projects", change the text, save.
-   Photo: put your image at assets/photo.jpg. Resume: assets/Shahzad_Resume.pdf
+   Photo: put your image at assets/photo.jpeg. Resume: assets/Shahzad_Resume.pdf
    ============================================================ */
 const DATA = {
   name: "Muhammad Shahzad",
