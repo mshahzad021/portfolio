@@ -11,7 +11,7 @@ const DATA = {
   status: "Open to remote roles and freelance projects",
   email: "shahzadbilal418@gmail.com",
   location: "Islamabad, Pakistan (remote)",
-  photo: "assets/photo.jpg",
+  photo: "assets/photo.jpeg",
   resume: "assets/Shahzad_Resume.pdf",
   formEndpoint: "", // optional: paste your Formspree URL (https://formspree.io/f/xxxx). Empty = opens email app.
   links: {
