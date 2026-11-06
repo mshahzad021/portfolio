@@ -35,29 +35,39 @@ const DATA = {
       role: "Operations Executive", company: "myAlfred.com", type: "Full-time · Remote", period: "09/2026 – Present",
       tags: ["Power BI", "Reconciliation", "Data Validation"],
       points: [
-        "Validate policy, documentation, payment and transaction data for accuracy and completeness.",
-        "Reconcile payments, invoices, receipts, commissions and VAT, and resolve discrepancies.",
-        "Build Power BI dashboards that track bookings, payments, exceptions and workflow KPIs."
+        "Manage insurance data operations by validating policy, documentation, payment, and transaction data for accuracy and completeness.",
+        "Reconcile policy payments, invoices, receipts, commissions, and VAT data, identifying discrepancies and maintaining data integrity.",
+        "Maintain operational datasets, booking trackers, and transaction records to ensure accurate and timely processing.",
+         "Develop operational reports and dashboards using Power BI and internal data to monitor bookings, payments, exceptions, and workflow KPIs.",
+         "Analyze operational data to identify inconsistencies, trends, and process improvement opportunities.",
+         "Collaborate with Operations and Placement teams to resolve data issues and improve reporting workflows, operational controls, and process efficiency."
+         
       ]
     },
     {
       role: "Data Management Executive", company: "myAlfred.com", type: "Full-time · Remote", period: "03/2024 – 09/2026",
       tags: ["SQL", "Excel", "AML Reporting", "Data Quality"],
       points: [
-        "Managed policy, premium, benefits and master data across multiple products and carriers.",
-        "Standardized and mapped vehicle and policy data, improving search accuracy and quotation matching.",
-        "Prepared AML and regulatory reports for insurer submissions.",
-        "Built dashboards monitoring data quality, coverage and compliance."
+        "Managed and validated insurance policy, premium, benefits, and master data across multiple insurance products and carrier sources.",
+        "Standardized and mapped vehicle and policy data with internal databases, improving data quality, search accuracy, and quotation matching.",
+        "Prepared AML and regulatory reports by extracting, transforming, validating, and formatting policy data for insurer submissions.",
+        "Used SQL and Excel to improve data workflows, reporting accuracy, and consistency across operational datasets.",
+         "Developed and maintained operational dashboards and reports to monitor policy data quality, coverage, and compliance, supporting decision-making and operational efficiency.",
+         "Supported Business Analysts, Compliance teams, and insurer stakeholders with accurate data, reporting, and data-quality analysis."
+      
       ]
     },
     {
       role: "Data Analyst", company: "PackageX, Inc.", type: "US SaaS · Islamabad", period: "12/2022 – 02/2026",
       tags: ["SQL", "BigQuery", "Tableau", "Power BI", "HubSpot"],
       points: [
-        "Built billing projection reports that improved forecast accuracy by 30% and cut billing discrepancies by 18%.",
-        "Built churn predictors and renewal dashboards, improving renewals by 15% and retention by 25%.",
-        "Delivered 20+ Tableau and Power BI dashboards, raising stakeholder adoption by 50%.",
-        "Analyzed usage and feature adoption across 1,000+ customers to support the product roadmap."
+        "Built weekly-to-annual usage reports from PostgreSQL/MySQL product databases and HubSpot data in BigQuery, using Excel to analyze customer behavior, product trends, and performance.",
+         "Built billing projection reports using SQL and Excel, improving forecast accuracy by 30% and reducing billing discrepancies by 18%.",
+         "Developed churn predictors and renewal dashboards using contract expiry, usage declines, and behavioral signals, improving renewals by 15% and retention by 25%.",
+         "Built 20+ Tableau and Power BI dashboards for Product, Sales, Finance, and Executive teams, increasing stakeholder adoption by 50%.",
+         "Conducted CRM audits to identify and fill missing values, improving data accuracy and maintaining a single source of truth.",
+         "Analyzed product usage, feature adoption, and engagement trends across 1,000+ customers, supporting product roadmap decisions."
+         
       ]
     },
     {
